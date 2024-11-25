@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request
 import joblib
 import warnings
-
+import os
 #--------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
 
 # Filter out any warnings you want to suppress
 warnings.filterwarnings("ignore", category=UserWarning)
 
-model= joblib.load('models\crop_app')
+model_path = os.path.join("models", "crop_app")
+model = joblib.load(model_path)
+
 
 #--------------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------------
